@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
+// tslint:disable-next-line: class-name
 export class pokemonClass {
     pokemons: Pokemon[];
     pokemon: PokemonId;
