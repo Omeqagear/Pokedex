@@ -1,1 +1,12 @@
-<p>pokemon works!</p>
+<pokemon-top-bar></pokemon-top-bar>
+
+<div class="pokemon-view">
+  <div class="container-input">
+    <input type="text" placeholder="buscar pokemon" [(ngModel)]="query">
+  </div>
+  <div class="grid" *ngIf="pokemons">
+    <div class="column" *ngFor="let pokemon of pokemon.results | search: query" [routerLink]="['/detail', pokemon.name]">
+      <p>{{ pokemon.name }}</p>
+    </div>
+  </div>
+</div>

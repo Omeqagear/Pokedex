@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Input } from '@angular/core';
+import { pokemonClass } from '../shared/AbstractClass/pokemonClass';
+import { Pokemon } from '../shared/models/pokemon';
+import { PokemonId } from '../shared/models/pokemonId';
 @Component({
-  selector: 'app-pokemon',
+  // tslint:disable-next-line: component-selector
+  selector: 'pokemon',
   templateUrl: './pokemon.component.html',
   styleUrls: ['./pokemon.component.scss']
 })
-export class PokemonComponent implements OnInit {
+export class PokemonComponent extends pokemonClass implements OnInit {
+  query: string;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+    ngOnInit() {
+      this.getPokemons();
+    }
 }
